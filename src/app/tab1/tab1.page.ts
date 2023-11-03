@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { Product } from '../models/product.model';
 import { CartService } from '../services/cart.service';
+import { Router } from '@angular/router';
+import { ProductService } from '../services/product.service';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-tab1',
@@ -37,7 +40,7 @@ export class Tab1Page {
     }
   ];
 
-  constructor(private cartService: CartService) {
+  constructor(private alertController: AlertController,private cartService: CartService,private router:Router,private produc:ProductService) {
     this.products.push({
       name: "Aguacate",
       price: 100,
@@ -66,7 +69,7 @@ export class Tab1Page {
       type: "Farmacia",
       photo: "https://picsum.photos/500/300?random"
     });
-    this.productsFounds = this.products;
+    this.productsFounds = this.produc.getProducts();
 
   }
 
@@ -92,6 +95,43 @@ export class Tab1Page {
     this.cartService.addToCart(product);
     console.log(this.cartService.getCart());
   }
-
+ 
+  async mostrarAlertaConfirmacion(pos:number) {
+    const alert = await this.alertController.create({
+      header: 'Confirmar eliminación',
+      message: '¿Estás seguro de que deseas eliminar este elemento?',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          handler: () => {
+            
+          }
+        },
+        {
+          text: 'Eliminar',
+          handler: () => {
+            this.produc.removeProduct(pos);
+            // Aquí puedes agregar la lógica para eliminar el elemento
+          }
+        }
+      ]
+    });
+  
+    await alert.present();
+  }
+  public openAddProductPage(){
+    this.router.navigate(['/add-product']);
+  }
+  
+  
+  public openUpdateProductPage(pos:number){
+    this.getpos(pos);
+    this.router.navigate(['/updateproduct']);
+  }
+  
+  public getpos(pos:number){
+    this.produc.pos = pos;
+  }
 
 }
