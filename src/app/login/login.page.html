@@ -1,0 +1,34 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="main">
+  <div class="login">
+    <form [formGroup]="userForm">
+      
+      <div>
+        <ion-icon name="people-circle-outline" id="icono-grande"></ion-icon>
+      </div>
+      <div class="username">
+        <ion-icon name="person-outline" class="iconos-log"></ion-icon>
+        <input type="text" id="user" placeholder="User" formControlName="username">
+      </div>
+      <div class="pass">
+        <ion-icon name="document-lock-outline" class="iconos-log"></ion-icon>
+       <input type="Password" id="user" placeholder="password" formControlName="password">
+      </div>
+      
+      <div class="boton">
+        <input type="button" value="Acceder" class="btn-grad" (click)="userLog()">
+      </div>
+
+      <div>
+        <a  (click)="mensajeOlvide()">¿Olvidaste tu cotraseña?</a>
+      </div>
+      
+    </form>
+  </div>
+ 
+</ion-content>

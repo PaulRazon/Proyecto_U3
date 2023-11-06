@@ -1,0 +1,36 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.logeo{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 10%;
+    height: 80px;
+
+}
+.imagen{
+    margin-right: 30px;
+    overflow: hidden; /* Recorta el contenido que se desborda */
+    border-radius: 100%; /* Hace que el borde sea circular */
+}
+#imagenUser{
+    margin-left: 4%;
+    margin-right: 10%;
+    width: 100%; /* Asegura que la imagen llene el contenedor circular */
+    height: 100%; /* Asegura que la imagen llene el contenedor circular */
+    object-fit: cover; /* Ajusta la imagen al contenedor sin deformarla */
+}
+.fab-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+ion-fab-button{
+    margin-right: 4px;
+}
