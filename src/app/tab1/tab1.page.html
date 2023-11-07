@@ -15,15 +15,15 @@
 
 </div>
 
-  <div class="logeo">
-    <h3>{{this.usuario.username}}</h3>
+  <div class="logeo" >
+    <h3 style="font-size: 12px;">{{this.usuario.username}}</h3>
     <div class="imagen">
       <img [src]="this.usuario.photo" id="imagenUser" alt=""/>
       
     </div>
    
   </div> 
-  <h3 *ngIf="usuarioAutenticado"><a (click)='cerrarsesion()'>Cerrar sesión</a></h3>
+  <h3 style="font-size: 12px;" *ngIf="usuarioAutenticado"><a (click)='cerrarsesion()'>Cerrar sesión</a></h3>
 </ion-header>
 
 <ion-content [fullscreen]="true">

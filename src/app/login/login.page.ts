@@ -23,7 +23,9 @@ export class LoginPage  {
   public userLog(){
     const user = this.userForm.value;
     this.user.usuarioOnline = this.user.getUser(user.username);
-    this.router.navigate(['/tabs']);
+    if(this.user.pos!==-1){
+      this.router.navigate(['/tabs']);
+    }
   }
 
   async mensajeOlvide(){

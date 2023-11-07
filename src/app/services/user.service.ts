@@ -6,6 +6,7 @@ import {User} from '../models/user.model'
 })
 export class UserService {
   public usuarios:User[] = [];
+  public pos=0;
   public usuarioOnline:User={
     username:'',
     password:'',
@@ -29,12 +30,16 @@ export class UserService {
     });
   }
   public getUser(name:string):User{
-    let pos= this.usuarios.findIndex(element=>element.username===name);
+    this.pos= this.usuarios.findIndex(element=>element.username===name);
     let user= this.usuarios.find(element=>element.username===name);
-    console.log(pos);
+    console.log(this.pos);
     console.table(user);
+    if(this.pos===-1){
+      alert("No se encontro ningun usuario con ese nombre, intente PaulDeus, Pablo o Pedro, contraseña: 12345678"); 
+      return {username:'',password:'',photo:''};
+    }
+    return this.usuarios[this.pos];
     
-    return this.usuarios[pos];
   }
 
   public getUsers():User[]{

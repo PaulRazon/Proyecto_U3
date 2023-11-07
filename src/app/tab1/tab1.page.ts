@@ -13,7 +13,7 @@ import { User } from '../models/user.model';
   styleUrls: ['tab1.page.scss']
 })
 export class Tab1Page{
-  public usuario: User ;
+  public usuario: User;
   public products: Product[] = [];
   public usuarioAutenticado= false;
   public productsFounds: Product[] = [];

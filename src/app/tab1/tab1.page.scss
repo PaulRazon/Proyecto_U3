@@ -7,23 +7,24 @@
 .logeo{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
-    width: 10%;
+    width: 20%;
     height: 80px;
+    
 
 }
 .imagen{
     margin-right: 30px;
-    overflow: hidden; /* Recorta el contenido que se desborda */
-    border-radius: 100%; /* Hace que el borde sea circular */
+    overflow: hidden; 
+    border-radius: 100%;    
 }
 #imagenUser{
-    margin-left: 4%;
-    margin-right: 10%;
-    width: 100%; /* Asegura que la imagen llene el contenedor circular */
-    height: 100%; /* Asegura que la imagen llene el contenedor circular */
-    object-fit: cover; /* Ajusta la imagen al contenedor sin deformarla */
+    margin-left: 1%,;
+    margin: right 1px;
+    width: 40px; 
+    height: 20px; 
+    object-fit: cover; 
 }
 .fab-container{
     display: flex;
